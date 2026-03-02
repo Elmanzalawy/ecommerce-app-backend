@@ -19,8 +19,8 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'description' => $this->faker->sentence(),
-            'price' => $this->faker->randomFloat(2, 1, 100),
-            'discount_price' => $this->faker->randomFloat(2, 1, 100),
+            'price' => $price = $this->faker->numberBetween(500, 9000),
+            'discount_price' => $this->faker->boolean(10) ? $this->faker->numberBetween(100, $price) : null,
             'currency' => $this->faker->currencyCode(),
             'stock' => $this->faker->numberBetween(0, 100),
             'is_active' => $this->faker->boolean(),

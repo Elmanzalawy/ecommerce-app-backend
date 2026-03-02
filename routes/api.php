@@ -8,11 +8,9 @@ Route::group(['prefix' => 'v1', 'as' => 'api.v1.'], function () {
     Route::post('/login', [AuthController::class, 'login']);
 
     Route::group(['prefix' => 'products', 'as' => 'products.'], function () {
-        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('/', [ProductController::class, 'listProducts'])->name('list');
         Route::get('/{id}', [ProductController::class, 'show'])->name('show');
     });
 
-    Route::group(['middleware' => 'auth:sanctum'], function () {
-
-    });
+    Route::group(['middleware' => 'auth:sanctum'], function () {});
 });
