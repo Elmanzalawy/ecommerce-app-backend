@@ -62,8 +62,10 @@
             "@php artisan migrate:fresh --seed",
             "@php artisan ide-helper:models -RW",
             "@php artisan ide-helper:generate",
-            "@php artisan erd:generate"
-        ],        "test": [
+            "@php artisan erd:generate",
+            "@php artisan typescript:transform"
+        ],        
+        "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
